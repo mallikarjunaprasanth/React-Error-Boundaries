@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -20,9 +20,17 @@ class ErrorBoundary extends Component {
         <div>
           <h1>Something went wrong...</h1>
           <p>{this.state.error && this.state.error.toString()}</p>
-          <details style={{ whiteSpace: 'pre-wrap' }}>
+          <details style={{ whiteSpace: "pre-wrap" }}>
             {this.state.errorInfo && this.state.errorInfo.componentStack}
           </details>
+          <button
+          className="mt-5"
+            onClick={() => {
+              window.location.reload(true);
+            }}
+          >
+            Try again
+          </button>
         </div>
       );
     }
